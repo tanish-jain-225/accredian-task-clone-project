@@ -1,0 +1,22 @@
+{
+  "name": "accredian-enterprise",
+  "version": "1.0.0",
+  "description": "High-fidelity enterprise L&D landing platform built with Next.js 15 and Tailwind CSS v4.",
+  "author": "Accredian Intern",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "lucide-react": "^1.14.0",
+    "next": "16.2.4",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4"
+  }
+}
