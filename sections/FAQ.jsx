@@ -19,20 +19,20 @@ export default function FAQ() {
               subtitle="Everything you need to know about our enterprise methodology, program structure, and strategic integration."
               left
             />
-            <div className="mt-12 p-6 xs:p-8 bg-white rounded-3xl border border-gray-100 shadow-sm">
+            <div className="mt-8 xs:mt-12 p-5 xs:p-8 bg-white rounded-[24px] xs:rounded-[32px] border border-gray-100 shadow-sm">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-10 h-10 xs:w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 xs:w-12 h-12 rounded-xl xs:rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0">
                   <div className="w-5 h-5 xs:w-6 h-6 rounded-lg bg-brand-500 shadow-inner" />
                 </div>
                 <h4 className="text-sm xs:text-lg font-black text-gray-950 uppercase tracking-tight">Need specific answers?</h4>
               </div>
-              <p className="text-gray-500 text-xs xs:text-sm font-medium leading-relaxed mb-6">
+              <p className="text-gray-500 text-[10px] xs:text-sm font-medium leading-relaxed mb-6">
                 Our enterprise advisory team is available 24/7 to provide custom program consultations for your organization.
               </p>
               <a 
                 href="#contact" 
                 suppressHydrationWarning
-                className="inline-flex items-center justify-center w-full py-4 bg-brand-600 text-white font-black text-[10px] xs:text-xs uppercase tracking-widest rounded-2xl hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/20"
+                className="inline-flex items-center justify-center w-full py-4 bg-brand-600 text-white font-black text-[9px] xs:text-xs uppercase tracking-widest rounded-xl xs:rounded-2xl hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/20"
               >
                 Contact Enterprise Support
               </a>

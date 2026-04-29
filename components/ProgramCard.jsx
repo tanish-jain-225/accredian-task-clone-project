@@ -38,7 +38,7 @@ export default function ProgramCard({
       {/* Decorative background accent on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-50/0 to-brand-50/0 group-hover:from-brand-50/80 group-hover:to-brand-50/20 transition-all duration-500" />
 
-      <div className="relative flex flex-col h-full p-8 z-10">
+      <div className="relative flex flex-col h-full p-6 xs:p-8 z-10">
         {/* Header */}
         <div className="flex items-start justify-between mb-6">
           <div className="flex flex-col gap-3">

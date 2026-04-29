@@ -27,7 +27,7 @@ export default function HowItWorks() {
           {/* Central Connection Line (Desktop) */}
           <div className="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-500/30 to-transparent -translate-y-1/2" />
 
-          <div className="flex flex-wrap gap-8">
+          <div className="flex flex-wrap gap-x-8 gap-y-12">
             {steps.map((step, index) => (
               <div
                 key={step.id}
@@ -35,9 +35,9 @@ export default function HowItWorks() {
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
                 {/* Step Card */}
-                <div className="relative bg-white/5 backdrop-blur-md border border-white/10 p-8 xs:p-10 rounded-[40px] hover:bg-white/10 transition-all duration-500 h-full flex flex-col items-center text-center">
+                <div className="relative bg-white/5 backdrop-blur-md border border-white/10 p-6 xs:p-10 rounded-[32px] xs:rounded-[40px] hover:bg-white/10 transition-all duration-500 h-full flex flex-col items-center text-center">
                   {/* Step Number */}
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-2xl bg-brand-600 flex items-center justify-center font-black text-white shadow-xl shadow-brand-600/40 ring-4 ring-gray-950 group-hover:scale-110 transition-transform duration-500">
+                  <div className="absolute -top-5 xs:-top-6 left-1/2 -translate-x-1/2 w-10 h-10 xs:w-12 xs:h-12 rounded-xl xs:rounded-2xl bg-brand-600 flex items-center justify-center font-black text-white shadow-xl shadow-brand-600/40 ring-4 ring-gray-950 group-hover:scale-110 transition-transform duration-500">
                     {index + 1}
                   </div>
 
@@ -72,13 +72,13 @@ export default function HowItWorks() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-20 flex justify-center reveal" style={{ animationDelay: '0.6s' }}>
-          <div className="px-6 xs:px-8 py-4 bg-brand-600/10 border border-brand-500/30 rounded-3xl xs:rounded-full flex flex-col xs:flex-row items-center gap-4 w-full xs:w-auto">
-            <span className="text-xs xs:text-sm font-bold text-brand-200 tracking-tight text-center">Ready to map your organization's path?</span>
+        <div className="mt-20 flex justify-center reveal px-4 xs:px-0" style={{ animationDelay: '0.6s' }}>
+          <div className="px-5 xs:px-8 py-4 bg-brand-600/10 border border-brand-500/30 rounded-2xl xs:rounded-full flex flex-col xs:flex-row items-center gap-4 w-full xs:w-auto">
+            <span className="text-[10px] xs:text-sm font-bold text-brand-200 tracking-tight text-center">Ready to map your organization's path?</span>
             <a 
               href="#contact" 
               suppressHydrationWarning
-              className="px-6 py-2 bg-brand-600 text-white rounded-full font-black text-[10px] xs:text-xs uppercase tracking-widest hover:bg-brand-50 hover:text-brand-600 transition-all w-full xs:w-auto text-center"
+              className="px-5 py-2.5 bg-brand-600 text-white rounded-xl xs:rounded-full font-black text-[9px] xs:text-xs uppercase tracking-widest hover:bg-brand-50 hover:text-brand-600 transition-all w-full xs:w-auto text-center"
             >
               Request Strategy Call
             </a>

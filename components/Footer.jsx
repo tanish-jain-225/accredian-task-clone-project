@@ -29,7 +29,7 @@ export default function Footer() {
               <span className="text-2xl xs:text-3xl font-black text-white tracking-tighter">
                 accredian<span className="text-brand-600">.</span>
               </span>
-              <p className="text-[8px] xs:text-[10px] text-gray-500 font-black tracking-[0.4em] uppercase mt-1">
+              <p className="text-[7px] xs:text-[10px] text-gray-500 font-black tracking-[0.4em] uppercase mt-1">
                 credentials that matter
               </p>
             </div>
@@ -61,9 +61,9 @@ export default function Footer() {
           </div>
 
           {/* Link Columns — Refactored to Flex */}
-          <div className="flex-1 flex flex-wrap gap-x-8 gap-y-12">
+          <div className="flex-1 flex flex-wrap gap-x-12 gap-y-12">
             {Object.entries(footerLinks).map(([title, links]) => (
-              <div key={title} className="flex-1 min-w-[140px]">
+              <div key={title} className="flex-1 min-w-[120px] xs:min-w-[140px]">
                 <h4 className="text-white font-black text-[9px] xs:text-[10px] uppercase tracking-[0.2em] mb-8">
                   {title}
                 </h4>
@@ -86,15 +86,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <p className="text-[9px] xs:text-[10px] font-black text-gray-600 uppercase tracking-widest text-center" suppressHydrationWarning>
+        <div className="pt-8 xs:pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-6 xs:gap-8">
+            <p className="text-[8px] xs:text-[10px] font-black text-gray-600 uppercase tracking-widest text-center" suppressHydrationWarning>
               &copy; {new Date().getFullYear()} Accredian Enterprise. Global Rights Reserved.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-              <a href="#" className="text-[9px] xs:text-[10px] font-bold text-gray-600 hover:text-white uppercase tracking-widest transition-colors">Privacy</a>
-              <a href="#" className="text-[9px] xs:text-[10px] font-bold text-gray-600 hover:text-white uppercase tracking-widest transition-colors">Terms</a>
-              <a href="#" className="text-[9px] xs:text-[10px] font-bold text-gray-600 hover:text-white uppercase tracking-widest transition-colors">Cookies</a>
+            <div className="flex flex-wrap items-center justify-center gap-x-3 xs:gap-x-6 gap-y-3">
+              <a href="#" className="text-[7px] xs:text-[10px] font-bold text-gray-600 hover:text-white uppercase tracking-widest transition-colors">Privacy</a>
+              <a href="#" className="text-[7px] xs:text-[10px] font-bold text-gray-600 hover:text-white uppercase tracking-widest transition-colors">Terms</a>
+              <a href="#" className="text-[7px] xs:text-[10px] font-bold text-gray-600 hover:text-white uppercase tracking-widest transition-colors">Cookies</a>
             </div>
           </div>
 

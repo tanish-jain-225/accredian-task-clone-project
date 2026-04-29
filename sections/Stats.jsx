@@ -16,18 +16,18 @@ export default function Stats() {
           />
         </div>
 
-        <div className="mt-20 flex flex-wrap gap-6 xs:gap-8">
+        <div className="mt-16 xs:mt-20 flex flex-wrap gap-6 xs:gap-8">
           {stats.map((stat, index) => (
             <div
               key={stat.id}
-              className="reveal group relative flex-1 min-w-[240px] xs:min-w-[280px] bg-white p-8 xs:p-10 rounded-[32px] border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+              className="reveal group relative flex-1 min-w-[240px] xs:min-w-[280px] bg-white p-6 xs:p-10 rounded-[24px] xs:rounded-[32px] border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-500 hover:-translate-y-2 overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Decorative gradient corner */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <div className="relative z-10">
-                <div className="text-4xl lg:text-5xl font-black text-gray-900 mb-3 tracking-tighter group-hover:text-brand-600 transition-colors duration-300">
+                <div className="text-3xl xs:text-4xl lg:text-5xl font-black text-gray-900 mb-2 xs:mb-3 tracking-tighter group-hover:text-brand-600 transition-colors duration-300">
                   {stat.value}
                 </div>
                 <div className="h-1 w-10 bg-brand-500 rounded-full mb-6 group-hover:w-20 transition-all duration-500" />
@@ -52,12 +52,12 @@ export default function Stats() {
             <p className="text-center text-[10px] text-gray-400 font-black uppercase tracking-[0.3em] mb-12">
               Accelerating growth at
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-10 opacity-40 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 xs:gap-x-12 gap-y-8 xs:gap-y-10 opacity-40 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0">
               {["TechNova", "FinServe", "GlobalEdge", "InnovateCo", "NexGen", "DataSphere"].map(
                 (name) => (
                   <div key={name} className="flex items-center gap-2 group cursor-default">
-                    <div className="w-8 h-8 rounded-lg bg-gray-200 group-hover:bg-brand-500 transition-colors duration-300" />
-                    <span className="font-black text-gray-950 text-sm tracking-tighter group-hover:text-brand-600 transition-colors duration-300">
+                    <div className="w-6 h-6 xs:w-8 h-8 rounded-lg bg-gray-200 group-hover:bg-brand-500 transition-colors duration-300" />
+                    <span className="font-black text-gray-950 text-[10px] xs:text-sm tracking-tighter group-hover:text-brand-600 transition-colors duration-300">
                       {name.toUpperCase()}
                     </span>
                   </div>

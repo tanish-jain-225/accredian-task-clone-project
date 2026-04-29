@@ -39,7 +39,7 @@ export default function Programs() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 suppressHydrationWarning
-                className={`px-5 xs:px-6 py-2 xs:py-2.5 rounded-xl text-[10px] xs:text-sm font-black uppercase tracking-widest transition-all duration-300 ${
+                className={`px-4 xs:px-6 py-2 xs:py-2.5 rounded-xl text-[9px] xs:text-sm font-black uppercase tracking-widest transition-all duration-300 ${
                   activeCategory === cat
                     ? "bg-white text-brand-600 shadow-md shadow-gray-200/50 ring-1 ring-gray-200"
                     : "text-gray-500 hover:text-gray-900 hover:bg-white/50"
@@ -52,9 +52,9 @@ export default function Programs() {
         </div>
 
         {/* Programs Grid — Refactored to Flex */}
-        <div className="mt-16 flex flex-wrap gap-10">
+        <div className="mt-12 xs:mt-16 flex flex-wrap gap-8 xs:gap-10">
           {filteredPrograms.map((program, index) => (
-            <div key={program.id} className="reveal flex-1 min-w-[280px]" style={{ animationDelay: `${(index % 3) * 0.1}s` }}>
+            <div key={program.id} className="reveal flex-1 min-w-[240px] xs:min-w-[280px]" style={{ animationDelay: `${(index % 3) * 0.1}s` }}>
               <ProgramCard {...program} />
             </div>
           ))}

@@ -57,7 +57,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-white pt-20 pb-24 lg:pt-32 lg:pb-40"
+      className="relative overflow-hidden bg-white pt-16 xs:pt-20 pb-20 xs:pb-24 lg:pt-32 lg:pb-40"
     >
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
@@ -79,7 +79,7 @@ export default function Hero() {
               Enterprise L&D Transformation
             </div>
 
-            <h1 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-black text-gray-950 leading-[1.1] tracking-tight mb-8 break-words">
+            <h1 className="text-3xl xs:text-4xl sm:text-6xl lg:text-7xl font-black text-gray-950 leading-[1.1] tracking-tight mb-8 break-words">
               Empower Your <br />
               <span className="text-gradient">Digital Workforce</span>
             </h1>
@@ -92,23 +92,23 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4.5 bg-brand-600 text-white font-black rounded-2xl hover:bg-brand-700 transition-all duration-300 shadow-xl shadow-brand-600/25 hover:shadow-brand-600/40 hover:-translate-y-1 text-sm sm:text-lg uppercase tracking-widest group"
+                className="inline-flex items-center justify-center gap-2 px-6 xs:px-8 py-4 xs:py-4.5 bg-brand-600 text-white font-black rounded-2xl hover:bg-brand-700 transition-all duration-300 shadow-xl shadow-brand-600/25 hover:shadow-brand-600/40 hover:-translate-y-1 text-xs xs:text-sm sm:text-lg uppercase tracking-widest group w-full sm:w-auto"
               >
                 Get Started <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="#programs"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4.5 bg-white text-gray-900 font-black rounded-2xl border-2 border-gray-100 hover:border-brand-200 hover:bg-brand-50 transition-all duration-300 text-sm sm:text-lg uppercase tracking-widest group"
+                className="inline-flex items-center justify-center gap-2 px-6 xs:px-8 py-4 xs:py-4.5 bg-white text-gray-900 font-black rounded-2xl border-2 border-gray-100 hover:border-brand-200 hover:bg-brand-50 transition-all duration-300 text-xs xs:text-sm sm:text-lg uppercase tracking-widest group w-full sm:w-auto"
               >
-                <div className="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center group-hover:bg-brand-600 transition-colors">
-                  <Play size={14} className="text-brand-600 group-hover:text-white transition-colors ml-0.5" fill="currentColor" />
+                <div className="w-7 h-7 xs:w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center group-hover:bg-brand-600 transition-colors">
+                  <Play size={12} className="text-brand-600 group-hover:text-white transition-colors ml-0.5" fill="currentColor" />
                 </div>
                 View Programs
               </a>
             </div>
 
             {/* Social Proof */}
-            <div className="flex flex-wrap items-center gap-6 p-1">
+            <div className="flex flex-wrap items-center gap-4 xs:gap-6 p-1">
               <div className="flex -space-x-3">
                 {["JD", "AS", "MK", "PL", "TW"].map((init, i) => (
                   <div
@@ -142,17 +142,17 @@ export default function Hero() {
               <div className="absolute inset-0 bg-brand-500/10 blur-[100px] scale-125 -z-10 rounded-full" />
               
               {/* Main Visual Component */}
-              <div className="relative bg-white rounded-[40px] p-2 shadow-[0_20px_50px_rgba(59,130,246,0.15)] border border-gray-100 overflow-hidden group">
-                <div className="bg-brand-600 rounded-[34px] p-6 xs:p-8 lg:p-10 text-white relative overflow-hidden">
+              <div className="relative bg-white rounded-[32px] xs:rounded-[40px] p-1.5 xs:p-2 shadow-[0_20px_50px_rgba(59,130,246,0.15)] border border-gray-100 overflow-hidden group">
+                <div className="bg-brand-600 rounded-[28px] xs:rounded-[34px] p-5 xs:p-8 lg:p-10 text-white relative overflow-hidden">
                   {/* Decorative mesh */}
                   <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }} />
                   
                   <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-10">
-                      <div className="w-10 h-10 xs:w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center">
-                        <div className="w-5 h-5 xs:w-6 h-6 rounded-lg bg-white shadow-inner" />
+                    <div className="flex items-center justify-between mb-8 xs:mb-10">
+                      <div className="w-9 h-9 xs:w-12 h-12 rounded-xl xs:rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center">
+                        <div className="w-4 h-4 xs:w-6 h-6 rounded-lg bg-white shadow-inner" />
                       </div>
-                      <div className="px-3 py-1 xs:px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-[8px] xs:text-[10px] font-black uppercase tracking-widest border border-white/20">
+                      <div className="px-3 py-1 xs:px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-[7px] xs:text-[10px] font-black uppercase tracking-widest border border-white/20">
                         Live Analytics
                       </div>
                     </div>

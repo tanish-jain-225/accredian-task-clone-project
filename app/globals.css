@@ -25,6 +25,9 @@
   
   body {
     @apply bg-white text-gray-900 selection:bg-brand-100 selection:text-brand-700;
+    word-break: break-word;
+    hyphens: auto;
+    overflow-x: hidden;
   }
 }
 

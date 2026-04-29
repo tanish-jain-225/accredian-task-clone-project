@@ -21,9 +21,9 @@ export default function Features() {
           />
         </div>
 
-        <div className="mt-20 flex flex-wrap gap-8 lg:gap-10">
+        <div className="mt-16 xs:mt-20 flex flex-wrap gap-8 lg:gap-10">
           {features.map((feature, index) => (
-            <div key={feature.id} className="reveal flex-1 min-w-[280px]" style={{ animationDelay: `${index * 0.1}s` }}>
+            <div key={feature.id} className="reveal flex-1 min-w-[240px] xs:min-w-[280px]" style={{ animationDelay: `${index * 0.1}s` }}>
               <FeatureCard
                 icon={feature.icon}
                 title={feature.title}
@@ -36,16 +36,16 @@ export default function Features() {
 
         {/* Floating CTA Banner */}
         <div className="mt-20 reveal" style={{ animationDelay: '0.4s' }}>
-          <div className="relative group overflow-hidden bg-gray-950 rounded-[40px] p-8 lg:p-12 shadow-2xl">
+          <div className="relative group overflow-hidden bg-gray-950 rounded-[32px] xs:rounded-[40px] p-6 xs:p-8 lg:p-12 shadow-2xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-600/20 blur-[100px] -translate-y-1/2 translate-x-1/2" />
             
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-10">
               <div className="max-w-xl text-center lg:text-left">
-                <h3 className="text-2xl lg:text-3xl font-black text-white mb-4 tracking-tight leading-tight">
+                <h3 className="text-xl xs:text-2xl lg:text-3xl font-black text-white mb-3 xs:mb-4 tracking-tight leading-tight">
                   Accelerate Your Organization's <br className="hidden sm:block" />
                   <span className="text-brand-500">Learning Curve</span>
                 </h3>
-                <p className="text-gray-400 font-medium leading-relaxed text-sm sm:text-base">
+                <p className="text-gray-400 font-medium leading-relaxed text-xs xs:text-sm sm:text-base">
                   Join hundreds of forward-thinking enterprises that use our platform to maintain a competitive edge in rapidly evolving markets.
                 </p>
               </div>

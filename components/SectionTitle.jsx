@@ -18,7 +18,7 @@ export default function SectionTitle({
           {eyebrow}
         </span>
       )}
-      <h2 className={`text-4xl sm:text-5xl font-black leading-[1.1] tracking-tight ${dark ? "text-white" : "text-gray-950"}`}>
+      <h2 className={`text-3xl xs:text-4xl sm:text-5xl font-black leading-[1.1] tracking-tight ${dark ? "text-white" : "text-gray-950"}`}>
         {highlight ? (
           <>
             {parts[0]}

@@ -12,6 +12,7 @@ const benefits = [
 
 export default function CTA() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", company: "" });
   const [errors, setErrors] = useState({});
 
@@ -24,15 +25,38 @@ export default function CTA() {
     return e;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length) {
       setErrors(errs);
       return;
     }
+    
+    setLoading(true);
     setErrors({});
-    setSubmitted(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: form.name,
+          email: form.email,
+          organization: form.company,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setErrors({ submit: 'Submission failed' });
+      }
+    } catch (err) {
+      setErrors({ submit: 'Network error' });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (field) => (e) => {
@@ -50,7 +74,7 @@ export default function CTA() {
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-600/30 blur-[150px] rounded-full translate-x-1/3 -translate-y-1/3" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/20 blur-[120px] rounded-full -translate-x-1/4 translate-y-1/4" />
       </div>
-      
+
       {/* Grid Pattern */}
       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
@@ -69,14 +93,14 @@ export default function CTA() {
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-10 font-medium max-w-lg">
               Join 400+ leading enterprises who trust Accredian to deliver world-class learning experiences and measurable talent ROI.
             </p>
-            
+
             <div className="space-y-6 mb-12">
               {benefits.map((b) => (
                 <div key={b} className="flex items-start xs:items-center gap-4 text-white font-bold group">
-                  <div className="w-6 h-6 rounded-lg bg-brand-600/20 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-600 transition-colors mt-0.5 xs:mt-0">
-                    <CheckCircle2 size={16} className="text-brand-400 group-hover:text-white transition-colors" />
+                  <div className="w-5 h-5 xs:w-6 h-6 rounded-lg bg-brand-600/20 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-600 transition-colors mt-1 xs:mt-0">
+                    <CheckCircle2 size={14} className="text-brand-400 group-hover:text-white transition-colors" />
                   </div>
-                  <span className="text-xs xs:text-sm tracking-tight leading-tight">{b}</span>
+                  <span className="text-[11px] xs:text-sm tracking-tight leading-tight">{b}</span>
                 </div>
               ))}
             </div>
@@ -96,10 +120,10 @@ export default function CTA() {
           <div className="reveal flex-1 w-full" style={{ animationDelay: '0.2s' }}>
             <div className="relative group">
               <div className="absolute inset-0 bg-brand-500/20 blur-3xl rounded-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              
-              <div className="relative bg-white/5 backdrop-blur-2xl border border-white/20 rounded-[40px] p-6 xs:p-10 lg:p-12 shadow-2xl overflow-hidden">
+
+              <div className="relative bg-white/5 backdrop-blur-2xl border border-white/20 rounded-[24px] xs:rounded-[40px] p-5 xs:p-10 lg:p-12 shadow-2xl overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '30px 30px' }} />
-                
+
                 {submitted ? (
                   <div className="flex flex-col items-center justify-center text-center py-12">
                     <div className="w-16 h-16 xs:w-20 h-20 rounded-3xl bg-brand-500/20 border-2 border-brand-500 flex items-center justify-center mb-8 reveal animate-bounce">
@@ -138,9 +162,8 @@ export default function CTA() {
                           value={form.name}
                           onChange={handleChange("name")}
                           suppressHydrationWarning
-                          className={`w-full px-5 py-4 rounded-2xl bg-white/5 border text-white placeholder-white/20 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all ${
-                            errors.name ? "border-red-500" : "border-white/10"
-                          }`}
+                          className={`w-full px-5 py-3.5 xs:py-4 rounded-xl xs:rounded-2xl bg-white/5 border text-white placeholder-white/20 text-xs xs:text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all ${errors.name ? "border-red-500" : "border-white/10"
+                            }`}
                         />
                       </div>
 
@@ -156,9 +179,8 @@ export default function CTA() {
                           value={form.email}
                           onChange={handleChange("email")}
                           suppressHydrationWarning
-                          className={`w-full px-5 py-4 rounded-2xl bg-white/5 border text-white placeholder-white/20 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all ${
-                            errors.email ? "border-red-500" : "border-white/10"
-                          }`}
+                          className={`w-full px-5 py-3.5 xs:py-4 rounded-xl xs:rounded-2xl bg-white/5 border text-white placeholder-white/20 text-xs xs:text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all ${errors.email ? "border-red-500" : "border-white/10"
+                            }`}
                         />
                       </div>
 
@@ -174,21 +196,30 @@ export default function CTA() {
                           value={form.company}
                           onChange={handleChange("company")}
                           suppressHydrationWarning
-                          className={`w-full px-5 py-4 rounded-2xl bg-white/5 border text-white placeholder-white/20 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all ${
-                            errors.company ? "border-red-500" : "border-white/10"
-                          }`}
+                          className={`w-full px-5 py-3.5 xs:py-4 rounded-xl xs:rounded-2xl bg-white/5 border text-white placeholder-white/20 text-xs xs:text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all ${errors.company ? "border-red-500" : "border-white/10"
+                            }`}
                         />
                       </div>
                     </div>
 
                     <button
                       type="submit"
+                      disabled={loading}
                       suppressHydrationWarning
-                      className="w-full py-5 bg-brand-600 text-white font-black text-[10px] xs:text-xs uppercase tracking-[0.2em] rounded-2xl hover:bg-brand-500 transition-all duration-300 shadow-xl shadow-brand-600/30 hover:shadow-brand-600/50 flex items-center justify-center gap-3 group"
+                      className={`w-full py-5 bg-brand-600 text-white font-black text-[10px] xs:text-xs uppercase tracking-[0.2em] rounded-2xl hover:bg-brand-500 transition-all duration-300 shadow-xl shadow-brand-600/30 hover:shadow-brand-600/50 flex items-center justify-center gap-3 group disabled:opacity-70 disabled:cursor-not-allowed`}
                     >
-                      Initialize Partnership <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                      {loading ? (
+                        <>
+                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          Processing...
+                        </>
+                      ) : (
+                        <>
+                          Initialize Partnership <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                        </>
+                      )}
                     </button>
-                    
+
                     <p className="text-center text-[8px] xs:text-[10px] text-gray-600 font-bold uppercase tracking-widest pt-2">
                       Secured by Enterprise encryption
                     </p>

@@ -21,9 +21,9 @@ export default function Testimonials() {
           />
         </div>
 
-        <div className="mt-20 flex flex-wrap gap-8 lg:gap-10">
+        <div className="mt-16 xs:mt-20 flex flex-wrap gap-8 lg:gap-10">
           {testimonials.map((testimonial, index) => (
-            <div key={testimonial.id} className="reveal flex-1 min-w-[280px]" style={{ animationDelay: `${index * 0.1}s` }}>
+            <div key={testimonial.id} className="reveal flex-1 min-w-[240px] xs:min-w-[280px]" style={{ animationDelay: `${index * 0.1}s` }}>
               <TestimonialCard {...testimonial} />
             </div>
           ))}
@@ -39,8 +39,8 @@ export default function Testimonials() {
                 </svg>
               ))}
             </div>
-            <p className="text-xl xs:text-2xl font-black text-gray-950 mb-1 text-center leading-tight">4.9/5 Average Program Rating</p>
-            <p className="text-gray-500 font-bold uppercase tracking-widest text-[8px] xs:text-[10px] text-center">Based on 12,000+ verified enterprise reviews</p>
+            <p className="text-lg xs:text-2xl font-black text-gray-950 mb-1 text-center leading-tight uppercase tracking-tighter">4.9/5 Average Program Rating</p>
+            <p className="text-gray-500 font-bold uppercase tracking-widest text-[7px] xs:text-[10px] text-center">Based on 12,000+ verified enterprise reviews</p>
           </div>
         </div>
       </Container>

@@ -13,7 +13,7 @@ export default function TestimonialCard({ name, role, company, text, initials, c
       {/* Decorative background shadow */}
       <div className="absolute inset-4 bg-brand-500/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
-      <div className="relative h-full flex flex-col p-10 rounded-[40px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-500 hover:-translate-y-2">
+      <div className="relative h-full flex flex-col p-6 xs:p-10 rounded-[32px] xs:rounded-[40px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-500 hover:-translate-y-2">
         {/* Quote Icon */}
         <div className="absolute top-8 right-10 text-brand-50 transition-colors duration-500 group-hover:text-brand-100">
           <Quote size={48} strokeWidth={3} />
