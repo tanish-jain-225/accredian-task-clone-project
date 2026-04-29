@@ -8,16 +8,57 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Accredian Enterprise — Next-Gen Expertise For Your Enterprise",
+  metadataBase: new URL("https://enterprise.accredian.com"), // Placeholder for real domain
+  title: {
+    default: "Accredian Enterprise — Next-Gen Talent Transformation & L&D",
+    template: "%s | Accredian Enterprise",
+  },
   description:
-    "Cultivate high-performance teams through expert learning. Accredian Enterprise delivers tailored corporate training programs, industry insights, and expert guidance for modern organizations.",
-  keywords:
-    "corporate training, enterprise learning, professional development, upskilling, accredian",
+    "Accelerate your workforce transformation with Accredian Enterprise. We deliver tailored corporate L&D programs, Data Science certifications, and leadership training for Fortune 500 companies.",
+  keywords: [
+    "corporate training",
+    "enterprise learning",
+    "professional development",
+    "upskilling",
+    "accredian",
+    "data science training",
+    "leadership programs",
+    "L&D transformation",
+  ],
+  authors: [{ name: "Accredian Team" }],
+  creator: "Accredian Enterprise",
+  publisher: "Accredian Enterprise",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
-    title: "Accredian Enterprise — Next-Gen Expertise For Your Enterprise",
+    title: "Accredian Enterprise — Next-Gen Talent Transformation & L&D",
     description:
-      "Tailored corporate L&D programs that transform your workforce into a competitive advantage.",
+      "Empower your workforce with industry-leading certifications and tailored corporate learning paths.",
+    url: "https://enterprise.accredian.com",
+    siteName: "Accredian Enterprise",
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Accredian Enterprise — Next-Gen Talent Transformation & L&D",
+    description:
+      "Empower your workforce with industry-leading certifications and tailored corporate learning paths.",
+    creator: "@accredian",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -34,6 +75,27 @@ export default function RootLayout({ children }) {
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "EducationalOrganization",
+              "name": "Accredian Enterprise",
+              "url": "https://enterprise.accredian.com",
+              "logo": "https://enterprise.accredian.com/favicon.ico",
+              "description": "Leading provider of corporate L&D and executive talent transformation programs.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "India"
+              },
+              "sameAs": [
+                "https://www.linkedin.com/company/accredian",
+                "https://twitter.com/accredian"
+              ]
+            }),
+          }}
         />
       </head>
       <body className="antialiased" suppressHydrationWarning>{children}</body>
